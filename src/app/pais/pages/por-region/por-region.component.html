@@ -9,13 +9,16 @@
 <!-- evalua varias condiciones y aplica los estilos -->
 <!-- [ngClass]="{'btn-primary': regionActiva === region,'btn-outline-primary': regionActiva !== region}" -->
 
-<div class="ro">
+<div class="row">
   <div class="col">
-    <button *ngFor="let region of regiones"
-            (click)="activarRegion(region)"
-            
-            class="btn btn-outline-primary m-1">
-      {{region}}
+    <button *ngFor="let region of regiones" (click)="activarRegion(region)" [class]="getClaseCSS(region)">
+      {{region | titlecase}}
     </button>
+  </div>
+
+  <div *ngIf="paises.length>0" class="row">
+    <div class="col">
+      <app-pais-tabla [paises]="paises"></app-pais-tabla>
+    </div>
   </div>
 </div>
