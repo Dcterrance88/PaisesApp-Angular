@@ -30,6 +30,12 @@ export class PorPaisComponent {
       });
   }
 
+  sugerencias(termino: string){
+    this.hayError = false;
+    //TODO: Crear sugerencias.
+
+  }
+
 }
 /*
 el parametro termino viene del evento emitido por el componente pais-input
