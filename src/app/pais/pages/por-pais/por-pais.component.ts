@@ -16,9 +16,9 @@ export class PorPaisComponent {
 
   constructor(private paisService: PaisService) { }
 
-  public buscar(): void {
+  public buscar(termino: string): void {
     this.hayError = false;
-    console.log(this.termino);
+    this.termino = termino;
 
     this.paisService.buscarPais(this.termino)
       .subscribe( (paisesResp) => {
@@ -31,3 +31,6 @@ export class PorPaisComponent {
   }
 
 }
+/*
+el parametro termino viene del evento emitido por el componente pais-input
+*/
