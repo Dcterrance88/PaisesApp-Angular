@@ -25,7 +25,6 @@ export class PorRegionComponent {
     this.regionActiva = (region === 'america') ? 'americas' : region;
     this.paises = [];
     this.paisService.buscarRegion(this.regionActiva).subscribe( paises => this.paises = paises);
-    console.log(this.paises)
   }
 
 }
